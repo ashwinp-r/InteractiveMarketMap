@@ -39,7 +39,7 @@ var svg = d3.select("svg"),
 
 var color = d3.scaleLinear()
     .domain([-1, 4])
-    .range(["hsl(0,10%,95%)", "hsl(0,10%,10%)"])
+    .range(["hsl(0,10%,95%)", "hsl(0,10%,5%)"])
     .interpolate(d3.interpolateHcl);
 
 var pack = d3.pack()
@@ -62,7 +62,7 @@ d3.json("https://raw.githubusercontent.com/ashwinp-r/InteractiveMarketMap/master
     .enter().append("circle")
       .attr("class", function(d) { return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root"; })
       .style("fill", function(d) { return d.children ? color(d.depth) : null; })
-      .on("click", function(d) { if (focus !== d) zoom(d), d3.event.stopPropagation(); });
+      .on("click", function(d) { if (focus !== d) zoom(d), d3.event.stopPropagation(); else onClickLeaf(d); });
 
   var text = g.selectAll("text")
     .data(nodes)
@@ -92,25 +92,43 @@ d3.json("https://raw.githubusercontent.com/ashwinp-r/InteractiveMarketMap/master
 
     transition.selectAll("text")
       .filter(function(d) { return d.parent === focus || this.style.display === "inline"; })
-        .style("fill-opacity", function(d) { return d.parent === focus ? 1 : 0; })
+	.style("fill-opacity", function(d) { 
+		if (d === focus) {
+			if (d.data.url !== undefined) {
+				return 1; 
+			} 
+		} else {
+			return d.parent === focus ? 1 : 0; 
+		}
+	})
         .on("start", function(d) { if (d.parent === focus) this.style.display = "inline"; })
-        .on("end", function(d) { if (d.parent !== focus) this.style.display = "none"; });
+        .on("end", function(d) { if (d.parent !== focus) {
+		if (d.data.url == undefined) {
+			console.log("hiding text");
+			console.log(d.data.url);
+			this.style.display = "none"; 
+	 	} else {
+			console.log("Displaying inline");
+			this.style.display = "inline"; 
+		}
+	}});
   }
 
   function onClickLeaf(d) {
-    if (d3.select(this).classed("node--leaf"))
-    {
-        if(d.url !== undefined)
+    // if (d3.select(this).classed("node--leaf"))
+    //{
+	console.log(d.data.name);
+        if(d.data.url !== undefined)
         {
-            alert(d.url); //open URL here
-        }
-    } else {
-        if (focus !== d)
+	    console.log("Opening URL");
+            alert(d.data.url); //open URL here
+        } else if (focus !== d)
         {
+	    console.log("Not opening URL");
             zoom(d);
             d3.event.stopPropagation();
         }
-     }
+     //}
   }
 
   function zoomTo(v) {
