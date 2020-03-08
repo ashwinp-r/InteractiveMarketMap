@@ -8,8 +8,8 @@
      "name": "Payments",
      "children": [
       {"name": "Request Network", "value": 3938},
-      {"name": "Raiden", "value": 3812},
-      {"name": "Lightning Network", "value": 6714},
+      {"name": "Raiden", "value": 3812, "url": "https://raiden.network/"},
+      {"name": "Lightning Network", "value": 6714, "url": "https://lightning.network/"},
       {"name": "OmiseGO", "value": 743},
       {"name": "Matic", "value": 743}
      ]

@@ -24,7 +24,7 @@
 .label,
 .node--root,
 .node--leaf {
-  pointer-events: none;
+  pointer-events: all;
 }
 
 </style>
@@ -95,6 +95,22 @@ d3.json("https://raw.githubusercontent.com/ashwinp-r/InteractiveMarketMap/master
         .style("fill-opacity", function(d) { return d.parent === focus ? 1 : 0; })
         .on("start", function(d) { if (d.parent === focus) this.style.display = "inline"; })
         .on("end", function(d) { if (d.parent !== focus) this.style.display = "none"; });
+  }
+
+  function onClickLeaf(d) {
+    if (d3.select(this).classed("node--leaf"))
+    {
+        if(d.url !== undefined)
+        {
+            alert(d.url); //open URL here
+        }
+    } else {
+        if (focus !== d)
+        {
+            zoom(d);
+            d3.event.stopPropagation();
+        }
+     }
   }
 
   function zoomTo(v) {
