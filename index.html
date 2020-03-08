@@ -12,7 +12,7 @@
 }
 
 .node--leaf {
-  fill: black;
+  fill: gray;
 }
 
 .label {
@@ -38,8 +38,8 @@ var svg = d3.select("svg"),
     g = svg.append("g").attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
 
 var color = d3.scaleLinear()
-    .domain([-1, 6])
-    .range(["hsl(155,80%,80%)", "hsl(250,30%,40%)"])
+    .domain([-1, 4])
+    .range(["hsl(0,10%,95%)", "hsl(0,10%,10%)"])
     .interpolate(d3.interpolateHcl);
 
 var pack = d3.pack()
@@ -75,7 +75,7 @@ d3.json("https://raw.githubusercontent.com/d3/d3-hierarchy/v1.1.8/test/data/flar
   var node = g.selectAll("circle,text");
 
   svg
-      .style("background", color(-1))
+      .style("background", color(-5))
       .on("click", function() { zoom(root); });
 
   zoomTo([root.x, root.y, root.r * 2 + margin]);
@@ -104,4 +104,23 @@ d3.json("https://raw.githubusercontent.com/d3/d3-hierarchy/v1.1.8/test/data/flar
   }
 });
 
+</script>
+
+<script src="https://raw.githack.com/tengbao/vanta/master/vendor/three.r95.min.js"></script>
+<script src="https://www.vantajs.com/dist/vanta.net.min.js"></script>
+<script>
+VANTA.NET({
+  el: "svg",
+  mouseControls: true,
+  touchControls: true,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 1.00,
+  scaleMobile: 1.00,
+  color: 0xffffff,
+  backgroundColor: 0x0,
+  points: 17.00,
+  maxDistance: 23.00,
+  spacing: 17.00
+})
 </script>
