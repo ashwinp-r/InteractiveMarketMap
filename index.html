@@ -46,7 +46,7 @@ var pack = d3.pack()
     .size([diameter - margin, diameter - margin])
     .padding(2);
 
-d3.json("https://raw.githubusercontent.com/d3/d3-hierarchy/v1.1.8/test/data/flare.json", function(error, root) {
+d3.json("https://raw.githubusercontent.com/ashwinp-r/InteractiveMarketMap/master/flare.json", function(error, root) {
   if (error) throw error;
 
   root = d3.hierarchy(root)

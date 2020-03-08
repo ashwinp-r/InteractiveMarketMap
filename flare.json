@@ -2,31 +2,38 @@
  "name": "flare",
  "children": [
   {
-   "name": "analytics",
+   "name": "Etherum DeFi",
    "children": [
     {
-     "name": "cluster",
+     "name": "Payments",
      "children": [
-      {"name": "AgglomerativeCluster", "value": 3938},
-      {"name": "CommunityStructure", "value": 3812},
-      {"name": "HierarchicalCluster", "value": 6714},
-      {"name": "MergeEdge", "value": 743}
+      {"name": "Request Network", "value": 3938},
+      {"name": "Raiden", "value": 3812},
+      {"name": "Lightning Network", "value": 6714},
+      {"name": "OmiseGO", "value": 743},
+      {"name": "Matic", "value": 743}
      ]
     },
     {
-     "name": "graph",
+     "name": "Infra",
      "children": [
-      {"name": "BetweennessCentrality", "value": 3534},
-      {"name": "LinkDistance", "value": 5731},
-      {"name": "MaxFlowMinCut", "value": 7840},
-      {"name": "ShortestPaths", "value": 5914},
-      {"name": "SpanningTree", "value": 3416}
+      {"name": "Gitcoin", "value": 3534},
+      {"name": "connext", "value": 5731},
+      {"name": "0x", "value": 7840},
+      {"name": "DFusion", "value": 5914},
+      {"name": "Settle", "value": 3416}
      ]
     },
     {
-     "name": "optimization",
+     "name": "Wallets",
      "children": [
-      {"name": "AspectRatioBanker", "value": 7074}
+      {"name": "MyEtherWallet", "value": 7074},
+      {"name": "Argent", "value": 7074},
+      {"name": "TrustWallet", "value": 7074},
+      {"name": "MetaMask", "value": 7074},
+      {"name": "Balance", "value": 7074},
+      {"name": "MyCrypto", "value": 7074},
+      {"name": "ImToken", "value": 7074}
      ]
     }
    ]
@@ -378,4 +385,3 @@
   }
  ]
 }
-
