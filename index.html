@@ -28,7 +28,8 @@
 }
 
 </style>
-<svg width="960" height="960"></svg>
+
+<svg id="vantajs" width="960" height="960"></svg>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
 
@@ -75,7 +76,6 @@ d3.json("https://raw.githubusercontent.com/ashwinp-r/InteractiveMarketMap/master
   var node = g.selectAll("circle,text");
 
   svg
-      .style("background", color(-5))
       .on("click", function() { zoom(root); });
 
   zoomTo([root.x, root.y, root.r * 2 + margin]);
@@ -104,8 +104,6 @@ d3.json("https://raw.githubusercontent.com/ashwinp-r/InteractiveMarketMap/master
         .on("start", function(d) { if (d.parent === focus) this.style.display = "inline"; })
         .on("end", function(d) { if (d.parent !== focus) {
 		if (d.data.url == undefined) {
-			console.log("hiding text");
-			console.log(d.data.url);
 			this.style.display = "none"; 
 	 	} else {
 			console.log("Displaying inline");
@@ -116,19 +114,17 @@ d3.json("https://raw.githubusercontent.com/ashwinp-r/InteractiveMarketMap/master
 
   function onClickLeaf(d) {
     // if (d3.select(this).classed("node--leaf"))
-    //{
 	console.log(d.data.name);
         if(d.data.url !== undefined)
         {
 	    console.log("Opening URL");
-            alert(d.data.url); //open URL here
+            open(d.data.url); //open URL here
         } else if (focus !== d)
         {
 	    console.log("Not opening URL");
             zoom(d);
             d3.event.stopPropagation();
         }
-     //}
   }
 
   function zoomTo(v) {
@@ -140,17 +136,16 @@ d3.json("https://raw.githubusercontent.com/ashwinp-r/InteractiveMarketMap/master
 
 </script>
 
+
 <script src="https://raw.githack.com/tengbao/vanta/master/vendor/three.r95.min.js"></script>
 <script src="https://www.vantajs.com/dist/vanta.net.min.js"></script>
 <script>
 VANTA.NET({
-  el: "svg",
-  mouseControls: true,
-  touchControls: true,
+  el: "#vantajs",
+  mouseControls: false,
+  touchControls: false,
   minHeight: 200.00,
   minWidth: 200.00,
-  scale: 1.00,
-  scaleMobile: 1.00,
   color: 0xffffff,
   backgroundColor: 0x0,
   points: 17.00,
