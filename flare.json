@@ -29,8 +29,16 @@
   {
    "name": "AMM",
    "children": [
-    {"name": "Uniswap", "value": 1041},
-    {"name": "Balancer", "value": 5176}
+    {"name": "CPM", 
+     "children": [
+    	{"name": "Uniswap", "value": 10000},
+    	{"name": "Balancer", "value": 100000}
+     ]
+    },
+    {"name": "Auction", "children": [
+    	{"name": "Dfusion", "value": 100000}
+      ]
+    }
    ]
   },
   {
