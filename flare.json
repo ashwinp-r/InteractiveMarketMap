@@ -29,14 +29,14 @@
   {
    "name": "AMM",
    "children": [
-    {"name": "CPM", 
+    {"name": "Constant Product Marketplaces", 
      "children": [
-    	{"name": "Uniswap", "value": 10000},
-    	{"name": "Balancer", "value": 100000}
+    	{"name": "Uniswap", "value": 7500},
+    	{"name": "Balancer", "value": 7500}
      ]
     },
     {"name": "Auction", "children": [
-    	{"name": "Dfusion", "value": 100000}
+    	{"name": "Dfusion", "value": 10000}
       ]
     }
    ]
