@@ -29,7 +29,7 @@
   {
    "name": "AMM",
    "children": [
-    {"name": "Constant Product Marketplaces", 
+    {"name": "Constant Product Marketplace", 
      "children": [
     	{"name": "Uniswap", "value": 7500},
     	{"name": "Balancer", "value": 7500}
