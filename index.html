@@ -74,6 +74,8 @@ d3.json("https://raw.githubusercontent.com/ashwinp-r/InteractiveMarketMap/master
       .text(function(d) { return d.data.name; });
 
   // Append to g
+  var url = 'https://github.com/ashwinp-r/InteractiveMarketMap/raw/master/SVG/${d.data.name}';
+  console.log(url);
   g.append('svg:image')
     .attr({
 	    'xlink:href': 'https://github.com/ashwinp-r/InteractiveMarketMap/raw/master/SVG/${d.data.name}',
