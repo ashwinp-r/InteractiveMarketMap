@@ -73,18 +73,6 @@ d3.json("https://raw.githubusercontent.com/ashwinp-r/InteractiveMarketMap/master
       .style("display", function(d) { return d.parent === root ? "inline" : "none"; })
       .text(function(d) { return d.data.name; });
 
-  // Append to name
-  var url = `https://github.com/ashwinp-r/InteractiveMarketMap/raw/master/SVG/${d.data.name}`;
-  console.log(url);
-  g.append('svg:image')
-    .attr({
-	    'xlink:href': 'https://github.com/ashwinp-r/InteractiveMarketMap/raw/master/SVG/${d.data.name}',
-	    x: 0,
-	    y: 0,
-	    width: 100,
-	    height: 100
-    });
-
   var node = g.selectAll("circle,text");
 
   svg
@@ -120,6 +108,15 @@ d3.json("https://raw.githubusercontent.com/ashwinp-r/InteractiveMarketMap/master
 	 	} else {
 			console.log("Displaying inline");
 			this.style.display = "inline"; 
+
+  		g.append('svg:image')
+    			.attr({
+	    		'xlink:href': `https://github.com/ashwinp-r/InteractiveMarketMap/raw/master/SVG/${d.data.name}`,
+	    		x: 0,
+	    		y: 0,
+	    		width: 100,
+	    		height: 100
+    		  });
 		}
 	}});
   }
