@@ -30,6 +30,15 @@
 </style>
 
 <svg id="vantajs" width="960" height="960"></svg>
+<svg id="mySvg" width="40" height="40">
+  <defs id="mdef">
+    <pattern id="compound" x="0" y="0" height="40" width="40">
+      <image x="0" y="0" width="40" height="40" xlink:href="https://raw.githubusercontent.com/ashwinp-r/InteractiveMarketMap/master/SVG/compound.png"></image>
+    </pattern>
+  </defs>
+</svg>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.6.2.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tipsy/1.0.3/jquery.tipsy.js"></script>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
 
@@ -63,7 +72,38 @@ d3.json("https://raw.githubusercontent.com/ashwinp-r/InteractiveMarketMap/master
     .enter().append("circle")
       .attr("class", function(d) { return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root"; })
       .style("fill", function(d) { return d.children ? color(d.depth) : null; })
-      .on("click", function(d) { if (focus !== d) zoom(d), d3.event.stopPropagation(); else onClickLeaf(d); });
+      .on("click", function(d) { if (focus !== d) zoom(d), d3.event.stopPropagation(); else onClickLeaf(d); })
+      .on("mouseover", function(d){
+	      if (d.data.name === "Compound") {
+		console.log("In circle")
+		$('circle').tipsy({
+                    gravity: 'w',
+	            fade: true,
+                    html: true,
+                    title: function (z) {
+                       var z = this.__data__;
+                       return z.data.name;
+                    }
+                });
+		var image = "url(#compound)";
+	      	//d3.select(this)
+                	//.style("fill", image);
+		// image.attr("transform", function(d) {return "translate("+d.x+",80)"});
+	      }
+      })
+      .on("mouseout", function() {
+	  d3.select(this)
+      	      .style("fill", function(d) { return d.children ? color(d.depth) : null; })
+	  $('circle').tipsy({
+                    gravity: 'w',
+	            fade: true,
+                    html: true,
+                    title: function (z) {
+                       var z = this.__data__;
+                       return;
+                    }
+                });
+      });
 
   var text = g.selectAll("text")
     .data(nodes)
@@ -76,7 +116,7 @@ d3.json("https://raw.githubusercontent.com/ashwinp-r/InteractiveMarketMap/master
   var node = g.selectAll("circle,text");
 
   svg
-      .on("click", function() { zoom(root); });
+      .on("click", function() { zoom(root); })
 
   zoomTo([root.x, root.y, root.r * 2 + margin]);
 
@@ -108,15 +148,6 @@ d3.json("https://raw.githubusercontent.com/ashwinp-r/InteractiveMarketMap/master
 	 	} else {
 			console.log("Displaying inline");
 			this.style.display = "inline"; 
-
-  		g.append('svg:image')
-    			.attr({
-	    		'xlink:href': `https://github.com/ashwinp-r/InteractiveMarketMap/raw/master/SVG/${d.data.name}`,
-	    		x: 0,
-	    		y: 0,
-	    		width: 100,
-	    		height: 100
-    		  });
 		}
 	}});
   }
