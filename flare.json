@@ -7,18 +7,17 @@
     {
      "name": "Centralized",
      "children": [
-      {"name": "ChainLink", "value": 3938},
-      {"name": "TownCrier", "value": 3812, "url": "https://raiden.network/"},
-      {"name": "Provable", "value": 6714, "url": "https://lightning.network/"},
-      {"name": "Compound", "value": 743},
-      {"name": "DDEX?", "value": 743}
+      {"name": "Provable", "value": 2000, "url": "https://lightning.network/"},
+      {"name": "Compound", "value": 2000},
+      {"name": "DDEX?", "value": 2000}
      ]
     },
     {
      "name": "Decentralized",
      "children": [
-      {"name": "MakerDAO", "value": 3534},
-      {"name": "Compound Open Oracle", "value": 5731}
+      {"name": "ChainLink", "value": 3500},
+      {"name": "MakerDAO", "value": 3500},
+      {"name": "Compound Open Oracle", "value": 3500}
      ]
     }
    ]
@@ -26,14 +25,14 @@
   {
    "name": "AMM",
    "children": [
-    {"name": "Constant Product Marketplaces", 
+    {"name": "Constant Function", 
      "children": [
-    	{"name": "Uniswap", "value": 7500},
-    	{"name": "Balancer", "value": 7500}
+    	{"name": "Uniswap", "value": 3500},
+    	{"name": "Balancer", "value": 3500}
      ]
     },
     {"name": "Auction", "children": [
-    	{"name": "Dfusion", "value": 5000}
+    	{"name": "Dfusion", "value": 3500}
       ]
     }
    ]
@@ -43,15 +42,17 @@
    "children": [
     {"name": "Historical", 
      "children": [
-    	{"name": "TruthCoin", "value": 7500},
-    	{"name": "SchellingCoin", "value": 7500}
+    	{"name": "TruthCoin", "value": 3500},
+    	{"name": "SchellingCoin", "value": 3500},
+    	{"name": "Orisi", "value": 3500}
      ]
     },
     {"name": "Modern", 
      "children": [
-    	{"name": "UMA", "value": 721},
-    	{"name": "Tellor", "value": 4294},
-    	{"name": "Augur", "value": 9800}
+    	{"name": "UMA V2", "value": 3500},
+    	{"name": "Tellor", "value": 3500},
+    	{"name": "Amoveo", "value": 3500},
+    	{"name": "Augur", "value": 3500}
       ]
      }
     ]
