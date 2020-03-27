@@ -51,7 +51,7 @@
      "children": [
     	{"name": "UMA V2", "value": 3500, "leaf": "true"},
     	{"name": "Tellor", "value": 3500, "leaf": "true"},
-    	{"name": "Amoveo", "value": 3500, "leaf": "true },
+    	{"name": "Amoveo", "value": 3500, "leaf": "true"},
     	{"name": "Augur", "value": 3500, "leaf": "true"}
       ]
      }
