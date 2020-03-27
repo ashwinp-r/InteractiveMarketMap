@@ -16,7 +16,7 @@
 }
 
 .label {
-  font: 11px "Proxima-Nova", Helvetica, Arial, sans-serif;
+  font: 16px "Proxima-Nova", Helvetica, Arial, sans-serif;
   text-anchor: middle;
   text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
 }
@@ -162,7 +162,7 @@ d3.json("https://raw.githubusercontent.com/ashwinp-r/InteractiveMarketMap/master
 	})
         .on("start", function(d) { if (d.parent === focus) this.style.display = "inline"; })
         .on("end", function(d) { if (d.parent !== focus) {
-		if (d.data.url == undefined) {
+		if (d.data.leaf == undefined) {
 			this.style.display = "none"; 
 			// Show paragraph here
 	 	} else {

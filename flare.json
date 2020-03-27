@@ -7,17 +7,17 @@
     {
      "name": "Centralized",
      "children": [
-      {"name": "Provable", "value": 2000, "url": "https://lightning.network/"},
-      {"name": "Compound", "value": 2000},
-      {"name": "DDEX?", "value": 2000}
+      {"name": "Provable", "value": 2000, "leaf": "true"},
+      {"name": "Compound", "value": 2000, "leaf": "true"},
+      {"name": "DDEX?", "value": 2000, "leaf": "true"}
      ]
     },
     {
      "name": "Decentralized",
      "children": [
-      {"name": "ChainLink", "value": 3500},
-      {"name": "MakerDAO", "value": 3500},
-      {"name": "Compound Open Oracle", "value": 3500}
+      {"name": "ChainLink", "value": 3500, "leaf": "true"},
+      {"name": "MakerDAO", "value": 3500, "leaf": "true"},
+      {"name": "Compound Open Oracle", "value": 3500, "leaf": "true"}
      ]
     }
    ]
@@ -27,12 +27,12 @@
    "children": [
     {"name": "Constant Function", 
      "children": [
-    	{"name": "Uniswap", "value": 3500},
-    	{"name": "Balancer", "value": 3500}
+    	{"name": "Uniswap", "value": 3500, "leaf": "true"},
+    	{"name": "Balancer", "value": 3500, "leaf": "true"}
      ]
     },
     {"name": "Auction", "children": [
-    	{"name": "Dfusion", "value": 3500}
+    	{"name": "Dfusion", "value": 3500, "leaf": "true"}
       ]
     }
    ]
@@ -42,17 +42,17 @@
    "children": [
     {"name": "Historical", 
      "children": [
-    	{"name": "TruthCoin", "value": 3500},
-    	{"name": "SchellingCoin", "value": 3500},
-    	{"name": "Orisi", "value": 3500}
+    	{"name": "TruthCoin", "value": 3500, "leaf": "true"},
+    	{"name": "SchellingCoin", "value": 3500, "leaf": "true"},
+    	{"name": "Orisi", "value": 3500, "leaf": "true"}
      ]
     },
     {"name": "Modern", 
      "children": [
-    	{"name": "UMA V2", "value": 3500},
-    	{"name": "Tellor", "value": 3500},
-    	{"name": "Amoveo", "value": 3500},
-    	{"name": "Augur", "value": 3500}
+    	{"name": "UMA V2", "value": 3500, "leaf": "true"},
+    	{"name": "Tellor", "value": 3500, "leaf": "true"},
+    	{"name": "Amoveo", "value": 3500, "leaf": "true },
+    	{"name": "Augur", "value": 3500, "leaf": "true"}
       ]
      }
     ]
