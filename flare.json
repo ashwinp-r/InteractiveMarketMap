@@ -27,8 +27,7 @@
    "children": [
     {"name": "Constant Function", 
      "children": [
-    	{"name": "Uniswap", "value": 3500, "leaf": "true"},
-    	{"name": "Balancer", "value": 3500, "leaf": "true"}
+    	{"name": "Uniswap", "value": 3500, "leaf": "true"}
      ]
     },
     {"name": "Auction", "children": [
