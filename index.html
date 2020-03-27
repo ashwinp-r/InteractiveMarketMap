@@ -161,11 +161,7 @@ d3.json("https://raw.githubusercontent.com/ashwinp-r/InteractiveMarketMap/master
 		}
 	})
 		  .on("start", function(d) { if (d.parent === focus) {
-			  if (d.data.leaf !== "true") {
-				this.style.display = "none";
-			  } else {
 				this.style.display = "inline"; 
-			  }
 		  }})
         .on("end", function(d) { if (d.parent !== focus) {
 		console.log(d.data.leaf);
